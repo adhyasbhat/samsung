@@ -1,0 +1,8 @@
+<form [formGroup]="loginForm" (ngSubmit)="login">
+
+    <input type="text" #box placeholder="enter sample text" formControlName="sample"/>
+    <br>
+    <span style = "color: red;" *ngIf = "sample && sample.invalid">This field should not be empty</span>
+    <br>
+    <button (click)="updateDataEvent.emit(box.value)" >Submit</button>
+</form>
